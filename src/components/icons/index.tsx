@@ -1,0 +1,5 @@
+export * from './ChevronIcon'
+export * from './MaleIcon'
+export * from './FemaleIcon'
+export * from './DogIcon'
+export * from './CatIcon'

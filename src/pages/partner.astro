@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro'
+import AlertSection from '../components/AlertSection'
+import HeroSection from '../components/HeroSection'
+import PromoFeatureSection from '../components/PromoFeatureSection'
+import AwardsSection from '../components/AwardsSection'
+import Footer from '../components/Footer'
+import PetInsuranceGuideSection from '../components/PetInsuranceGuideSection'
+---
+
+<Layout
+  title="Pet Price Club Exclusive - 15% OFF Pet Insurance for Life | Knose"
+  description="Exclusive Pet Price Club offer: Get 15% OFF pet insurance for life! Comprehensive coverage up to $25,000, no sub-limits, fast claims. Join 60,000+ insured pets."
+  keywords="pet price club, pet insurance discount, exclusive offer, 15% off pet insurance, pet insurance australia, dog insurance, cat insurance"
+  ogImage="/og-partner-pet-price-club.jpg"
+>
+  <div class="bg-white relative min-h-screen">
+    <AlertSection />
+    <HeroSection variant="partner" />
+    <PromoFeatureSection />
+    <AwardsSection />
+    <PetInsuranceGuideSection />
+    <Footer />
+  </div>
+</Layout>

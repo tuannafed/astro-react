@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro'
+import {
+  WhySection,
+  FaqSection,
+  TestimonialsSection,
+  StorySection,
+  ResourcesSection,
+  PetCarePlansSection,
+  ClaimsSlider,
+  ExclusionSection,
+} from '../components/home'
+import Footer from '../components/Footer'
+import HeroSection from '../components/HeroSection'
+import PromoFeatureSection from '../components/PromoFeatureSection'
+import GetRatesSection from '../components/GetRatesSection'
+import AwardsSection from '../components/AwardsSection'
+import AlertSection from '../components/AlertSection'
+---
+
+<Layout
+  title="Pet Insurance - Get Your Free Quote | Award-Winning Coverage in Australia"
+  description="Get 2 months FREE pet insurance with award-winning coverage. Customisable plans up to $25,000, no sub-limits, fast claims. Join 55,000+ insured pets. Get your quote today!"
+  keywords="pet insurance australia, dog insurance, cat insurance, pet coverage, veterinary insurance, pet health, insurance quote, free months"
+  ogImage="/og-pet-insurance.jpg"
+>
+  <div class="bg-white relative min-h-screen">
+    <AlertSection />
+
+    <HeroSection variant="home" />
+
+    <!-- USPs Section -->
+    <WhySection client:load />
+
+    <!-- Promo Feature Section -->
+    <PromoFeatureSection />
+
+    <!-- Get Rates Section -->
+    <GetRatesSection />
+
+    <!-- Awards Section -->
+    <AwardsSection />
+
+    <!-- FAQ Section -->
+    <FaqSection />
+
+    <!-- Pet Care Plans Section -->
+    <PetCarePlansSection />
+
+    <!-- Claims Slider -->
+    <ClaimsSlider />
+
+    <!-- Exclusion Section -->
+    <ExclusionSection client:load />
+
+    <!-- Testimonials Section -->
+    <TestimonialsSection client:load />
+
+    <!-- Story Section -->
+    <StorySection />
+
+    <!-- Resources Section -->
+    <ResourcesSection />
+
+    <!-- Footer -->
+    <Footer />
+  </div>
+</Layout>

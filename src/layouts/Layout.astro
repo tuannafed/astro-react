@@ -1,0 +1,48 @@
+---
+import '../styles/globals.css'
+import MetaTags from './MetaTags.astro'
+import HeadAssets from './HeadAssets.astro'
+
+export interface Props {
+  title: string
+  description?: string
+  keywords?: string
+  ogImage?: string
+  canonical?: string
+}
+
+const {
+  title,
+  description = 'Pet Insurance Landing Page',
+  keywords = 'pet insurance, dog insurance, cat insurance, pet care, veterinary coverage',
+  ogImage = '/og-image.jpg',
+  canonical = Astro.url.href,
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <MetaTags
+      title={title}
+      description={description}
+      keywords={keywords}
+      ogImage={ogImage}
+      canonical={canonical}
+    />
+
+    <HeadAssets />
+    <script>
+      import '../libs/aos.ts'
+    </script>
+  </head>
+  <body class="antialiased font-sans">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://petinsurance.com.au/sitemap.xml
+
+# Disallow admin and build areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_astro/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+
+# Allow important pages and assets
+Allow: /
+Allow: /landing/
+Allow: /partner/
+Allow: /assets/
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1

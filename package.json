@@ -1,0 +1,36 @@
+{
+  "name": "my-petsy-astro-clean",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:production": "astro build && node scripts/move-icons.js && node scripts/fix-paths.js && node scripts/format-html.js",
+    "move-icons": "node scripts/move-icons.js",
+    "format-html": "node scripts/format-html.js",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/vercel": "^8.2.6",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "aos": "^2.3.4",
+    "astro": "^5.13.2",
+    "clsx": "^2.1.1",
+    "embla-carousel": "^8.6.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "glob": "^11.0.3",
+    "html-beautify": "^1.0.3",
+    "js-beautify": "^1.15.1",
+    "prettier": "^3.4.2"
+  }
+}
