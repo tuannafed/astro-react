@@ -5,10 +5,8 @@ import HeroSection from '../components/HeroSection'
 import PromoFeatureSection from '../components/PromoFeatureSection'
 import AwardsSection from '../components/AwardsSection'
 import AlertSection from '../components/AlertSection'
-import PetInsuranceGuideSection from '../components/PetInsuranceGuideSection'
+import { PetInsuranceGuideSection } from '../components/landing'
 import GetRatesSection from '../components/GetRatesSection'
-import { allImages } from '../constants'
-import HeroTitle from '../components/landing/HeroTitle'
 ---
 
 <Layout
@@ -23,7 +21,7 @@ import HeroTitle from '../components/landing/HeroTitle'
     <PromoFeatureSection />
     <GetRatesSection />
     <AwardsSection />
-    <PetInsuranceGuideSection />
+    <PetInsuranceGuideSection client:load />
     <Footer />
   </div>
 </Layout>

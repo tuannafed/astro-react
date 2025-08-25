@@ -160,18 +160,18 @@ export default function TestimonialsSection() {
             <>
               <button
                 onClick={() => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-                className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
+                className="absolute left-2 sm:left-2.5 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
                 aria-label="Previous testimonials"
               >
-                <ChevronIcon className="w-4 h-4 sm:w-5 sm:h-5 rotate-90 [&>path]:fill-primary" />
+                <ChevronIcon className="w-8 h-8 rotate-90 [&>path]:fill-primary" />
               </button>
 
               <button
                 onClick={() => setCurrentIndex((prev) => (prev + 1) % totalSlides)}
-                className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
+                className="absolute right-2 sm:right-2.5 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
                 aria-label="Next testimonials"
               >
-                <ChevronIcon className="w-4 h-4 sm:w-5 sm:h-5 -rotate-90 [&>path]:fill-primary" />
+                <ChevronIcon className="w-8 h-8 -rotate-90 [&>path]:fill-primary" />
               </button>
             </>
           )}

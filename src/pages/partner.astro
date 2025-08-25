@@ -5,7 +5,7 @@ import HeroSection from '../components/HeroSection'
 import PromoFeatureSection from '../components/PromoFeatureSection'
 import AwardsSection from '../components/AwardsSection'
 import Footer from '../components/Footer'
-import PetInsuranceGuideSection from '../components/PetInsuranceGuideSection'
+import { PetInsuranceGuideSection } from '../components/landing'
 ---
 
 <Layout
@@ -19,7 +19,7 @@ import PetInsuranceGuideSection from '../components/PetInsuranceGuideSection'
     <HeroSection variant="partner" />
     <PromoFeatureSection />
     <AwardsSection />
-    <PetInsuranceGuideSection />
+    <PetInsuranceGuideSection client:load />
     <Footer />
   </div>
 </Layout>

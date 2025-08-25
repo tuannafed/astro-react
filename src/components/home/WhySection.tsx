@@ -69,14 +69,14 @@ export default function WhySection() {
                 onClick={() => setActiveTab(index)}
                 onTouchStart={() => setActiveTab(index)}
                 className={clsx(
-                  'w-full flex cursor-pointer items-center justify-between px-5 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 border focus:outline-none touch-manipulation',
+                  'w-full flex cursor-pointer items-center justify-between pl-5 pr-3 gap-4 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 border focus:outline-none touch-manipulation',
                   isActive
                     ? 'bg-pink-100 text-primary border-primary shadow'
                     : 'bg-gray-100 text-dark border-transparent hover:border-primary active:border-primary active:bg-pink-50'
                 )}
               >
-                <span>{tab.title}</span>
-                {isActive && <ChevronIcon className="w-5 h-5 -rotate-90 [&>path]:fill-primary" />}
+                <span className="flex-1">{tab.title}</span>
+                {isActive && <ChevronIcon className="w-6 h-6 shrink-0 -rotate-90 [&>path]:fill-primary" />}
               </div>
             )
           })}

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { cn } from '../../utils/cn'
 
 const faqs = [
   {
@@ -56,6 +57,10 @@ const faqs = [
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
   return (
     <section className="max-w-7xl mx-auto py-6 sm:py-12">
       <div className="bg-blue-light sm:rounded-2xl py-10 px-5 sm:px-12 sm:py-20 mx-auto text-center">
@@ -84,19 +89,35 @@ export default function FaqSection() {
             return (
               <div key={index} className="group">
                 <div
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full cursor-pointer flex justify-between items-center gap-6 py-4 sm:py-6 text-left"
+                  onClick={() => toggle(index)}
+                  onTouchStart={() => toggle(index)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-content-${index}`}
+                  className={cn(
+                    'w-full cursor-pointer flex justify-between items-center gap-6 py-4 sm:py-6 text-left touch-manipulation transition-all duration-500 ease-in-out',
+                    isOpen ? 'text-cyan-dark' : 'hover:text-cyan-dark'
+                  )}
                 >
-                  <span className="font-bold hover:text-cyan-dark flex-1 text-gray-700 text-sm sm:text-xl">
-                    {faq.question}
-                  </span>
+                  <span className="font-bold flex-1 text-gray-700 text-sm sm:text-xl">{faq.question}</span>
                   <span
-                    className={`w-3 h-3 shrink-0 transform transition-transform duration-300 border-t-2 border-r-2 border-gray-500 rotate-45 ${
-                      isOpen ? 'rotate-[225deg]' : 'rotate-135'
-                    }`}
+                    className={cn(
+                      'w-3 h-3 shrink-0 transform transition-transform duration-100 border-t-2 -mt-1.5 border-r-2 border-gray-500',
+                      isOpen ? '-rotate-45' : 'rotate-135'
+                    )}
                   />
                 </div>
-                {isOpen && <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-sm text-gray-600">{faq.answer}</div>}
+                <div
+                  id={`faq-content-${index}`}
+                  className={cn(
+                    'overflow-hidden transition-all duration-300 ease-in-out text-left',
+                    isOpen ? 'max-h-96 opacity-100 pb-4 sm:pb-5' : 'max-h-0 opacity-0'
+                  )}
+                  aria-hidden={!isOpen}
+                >
+                  <div className="text-sm sm:text-base text-gray-600 leading-relaxed">{faq.answer}</div>
+                </div>
               </div>
             )
           })}

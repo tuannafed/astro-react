@@ -1,5 +1,3 @@
-'use client'
-
 import { useEffect, useRef, useCallback } from 'react'
 import EmblaCarousel from 'embla-carousel'
 import { allImages } from '../../constants'
@@ -113,17 +111,17 @@ export default function ClaimsSlider() {
 
         <button
           onClick={scrollPrev}
-          className="absolute left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg focus:outline-none p-2 sm:p-3 rounded-full hover:bg-gray-50 transition-colors"
+          className="absolute left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
           aria-label="Previous claims"
         >
-          <ChevronIcon className="w-4 h-4 sm:w-5 sm:h-5 rotate-90 [&>path]:fill-primary" />
+          <ChevronIcon className="w-8 h-8 rotate-90 [&>path]:fill-primary" />
         </button>
         <button
           onClick={scrollNext}
-          className="absolute right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg focus:outline-none p-2 sm:p-3 rounded-full hover:bg-gray-50 transition-colors"
+          className="absolute right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
           aria-label="Next claims"
         >
-          <ChevronIcon className="w-4 h-4 sm:w-5 sm:h-5 -rotate-90 [&>path]:fill-primary" />
+          <ChevronIcon className="w-8 h-8 -rotate-90 [&>path]:fill-primary" />
         </button>
       </div>
     </section>

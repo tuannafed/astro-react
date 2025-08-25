@@ -1,4 +1,4 @@
-export * from './ChevronIcon'
+export { default as ChevronIcon } from './ChevronIcon'
 export * from './MaleIcon'
 export * from './FemaleIcon'
 export * from './DogIcon'

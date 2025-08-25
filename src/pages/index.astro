@@ -42,7 +42,7 @@ import AlertSection from '../components/AlertSection'
     <AwardsSection />
 
     <!-- FAQ Section -->
-    <FaqSection />
+    <FaqSection client:load />
 
     <!-- Pet Care Plans Section -->
     <PetCarePlansSection />
@@ -54,10 +54,7 @@ import AlertSection from '../components/AlertSection'
     <ExclusionSection />
 
     <!-- Testimonials Section -->
-    <TestimonialsSection
-      client:load
-      client:only="react"
-    />
+    <TestimonialsSection client:load />
 
     <!-- Story Section -->
     <StorySection />
