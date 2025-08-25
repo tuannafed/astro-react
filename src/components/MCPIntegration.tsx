@@ -54,7 +54,6 @@ export function QuoteForm() {
 
       // Simulate MCP server integration
       const mcpResponse = await simulateMCPServerCall(formData)
-      console.log('MCP Server Response:', mcpResponse)
 
       setSubmitStatus('success')
       setFormData({
@@ -281,7 +280,6 @@ export function CallbackForm() {
 
       // Simulate MCP server integration
       const mcpResponse = await simulateMCPServerCall(formData)
-      console.log('MCP Server Response:', mcpResponse)
 
       setSubmitStatus('success')
       setFormData({

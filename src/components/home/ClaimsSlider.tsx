@@ -33,7 +33,6 @@ export default function ClaimsSlider() {
   const emblaApi = useRef<ReturnType<typeof EmblaCarousel> | null>(null)
 
   useEffect(() => {
-    console.log('emblaApi', emblaApi)
     if (!emblaRef.current) return
 
     emblaApi.current = EmblaCarousel(emblaRef.current, {

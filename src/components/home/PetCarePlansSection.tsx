@@ -36,7 +36,7 @@ export default function PetCarePlansSection() {
           data-aos-duration="700"
         >
           {plans.map((plan, idx) => (
-            <div className="relative rounded-xl w-full max-w-[496px] overflow-hidden">
+            <div key={idx} className="relative rounded-xl w-full max-w-[496px] overflow-hidden">
               <a href={plan.href} key={idx} className="block shadow-lg mx-auto group">
                 <img
                   src={plan.image}

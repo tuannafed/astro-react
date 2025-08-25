@@ -63,7 +63,6 @@ export default function TestimonialsSection() {
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== 'undefined') {
-        console.log('window.innerWidth', window.innerWidth)
         if (window.innerWidth >= 1024) {
           setCardsPerView(3)
         } else if (window.innerWidth >= 768) {
