@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { allImages } from '../../constants'
 import { ChevronIcon } from '../icons'
 
@@ -59,6 +59,8 @@ const testimonials = [
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [cardsPerView, setCardsPerView] = useState(1)
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
 
   useEffect(() => {
     const handleResize = () => {
@@ -85,6 +87,29 @@ export default function TestimonialsSection() {
     () => testimonials.slice(currentIndex * cardsPerView, (currentIndex + 1) * cardsPerView),
     [currentIndex, cardsPerView]
   )
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return
+
+    const distance = touchStartX.current - touchEndX.current
+    const minSwipeDistance = 50
+
+    if (distance > minSwipeDistance) {
+      // Swipe left - next slide
+      setCurrentIndex((prev) => (prev + 1) % totalSlides)
+    } else if (distance < -minSwipeDistance) {
+      // Swipe right - previous slide
+      setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides)
+    }
+  }
 
   return (
     <section className="bg-white py-12 sm:py-16 px-5">
@@ -135,24 +160,29 @@ export default function TestimonialsSection() {
             <>
               <button
                 onClick={() => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-                className="absolute left-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors hidden sm:block"
+                className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
                 aria-label="Previous testimonials"
               >
-                <ChevronIcon className="w-5 h-5 rotate-90 [&>path]:fill-primary" />
+                <ChevronIcon className="w-4 h-4 sm:w-5 sm:h-5 rotate-90 [&>path]:fill-primary" />
               </button>
 
               <button
                 onClick={() => setCurrentIndex((prev) => (prev + 1) % totalSlides)}
-                className="absolute right-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors hidden sm:block"
+                className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
                 aria-label="Next testimonials"
               >
-                <ChevronIcon className="w-5 h-5 -rotate-90 [&>path]:fill-primary" />
+                <ChevronIcon className="w-4 h-4 sm:w-5 sm:h-5 -rotate-90 [&>path]:fill-primary" />
               </button>
             </>
           )}
 
           {/* Cards */}
-          <div className="flex items-stretch gap-4 sm:gap-6 sm:px-6 md:px-10">
+          <div
+            className="flex items-stretch gap-4 sm:gap-6 sm:px-6 md:px-10"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {visibleTestimonials.map((t, i) => (
               <div
                 key={t.id}

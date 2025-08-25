@@ -5,7 +5,7 @@ export default function AwardsSection() {
     <section className="bg-primary text-white px-5 pt-4 pb-8 sm:py-0">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-2 sm:gap-12 text-center lg:text-left">
         <div className="flex items-center justify-center gap-4 flex-wrap" data-aos="zoom-out">
-          <img src={logoImages.partnerLogo.src} alt="Awards" className="w-[428px] object-contain" />
+          <img src={logoImages.partnerLogo.src} alt="Awards" className="w-full max-w-[428px] object-contain" />
         </div>
 
         {/* Text content */}

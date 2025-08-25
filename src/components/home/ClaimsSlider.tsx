@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import EmblaCarousel from 'embla-carousel'
 import { allImages } from '../../constants'
+import { ChevronIcon } from '../icons'
 
 const claimsData = [
   {
@@ -39,17 +40,24 @@ export default function ClaimsSlider() {
       loop: true,
       align: 'start',
       slidesToScroll: 1,
+      dragFree: false,
+      containScroll: 'trimSnaps',
+      skipSnaps: false,
+      dragThreshold: 10,
+      inViewThreshold: 0.7,
     })
-
-    const prevBtn = document.getElementById('prevBtn')
-    const nextBtn = document.getElementById('nextBtn')
-
-    prevBtn?.addEventListener('click', () => emblaApi.current?.scrollPrev())
-    nextBtn?.addEventListener('click', () => emblaApi.current?.scrollNext())
 
     return () => {
       emblaApi.current?.destroy()
     }
+  }, [])
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi.current) emblaApi.current.scrollPrev()
+  }, [])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi.current) emblaApi.current.scrollNext()
   }, [])
 
   return (
@@ -103,14 +111,20 @@ export default function ClaimsSlider() {
           </div>
         </div>
 
-        <span
-          id="prevBtn"
-          className="absolute left-4 sm:-left-4 top-1/2 -translate-y-1/2 z-10 hover:text-primary w-6 h-6 shrink-0 transform transition-transform duration-300 border-t-3 border-r-3 border-gray-500 -rotate-135 cursor-pointer"
-        />
-        <span
-          id="nextBtn"
-          className="absolute right-4 sm:-right-4 top-1/2 -translate-y-1/2 z-10 hover:text-primary w-5 h-5 shrink-0 transform transition-transform duration-300 border-t-3 border-r-3 border-gray-500 rotate-45 cursor-pointer"
-        />
+        <button
+          onClick={scrollPrev}
+          className="absolute left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg focus:outline-none p-2 sm:p-3 rounded-full hover:bg-gray-50 transition-colors"
+          aria-label="Previous claims"
+        >
+          <ChevronIcon className="w-4 h-4 sm:w-5 sm:h-5 rotate-90 [&>path]:fill-primary" />
+        </button>
+        <button
+          onClick={scrollNext}
+          className="absolute right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg focus:outline-none p-2 sm:p-3 rounded-full hover:bg-gray-50 transition-colors"
+          aria-label="Next claims"
+        >
+          <ChevronIcon className="w-4 h-4 sm:w-5 sm:h-5 -rotate-90 [&>path]:fill-primary" />
+        </button>
       </div>
     </section>
   )

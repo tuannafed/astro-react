@@ -67,11 +67,12 @@ export default function WhySection() {
                 aria-controls={`tabpanel-${index}`}
                 id={`tab-${index}`}
                 onClick={() => setActiveTab(index)}
+                onTouchStart={() => setActiveTab(index)}
                 className={clsx(
-                  'w-full flex cursor-pointer items-center justify-between px-5 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 border focus:outline-none',
+                  'w-full flex cursor-pointer items-center justify-between px-5 py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 border focus:outline-none touch-manipulation',
                   isActive
                     ? 'bg-pink-100 text-primary border-primary shadow'
-                    : 'bg-gray-100 text-dark border-transparent hover:border-primary'
+                    : 'bg-gray-100 text-dark border-transparent hover:border-primary active:border-primary active:bg-pink-50'
                 )}
               >
                 <span>{tab.title}</span>

@@ -31,15 +31,37 @@ function loadAOS() {
 }
 
 async function initAOS() {
+  // Wait for hydration to complete before initializing AOS
+  if (document.readyState !== 'complete') {
+    return new Promise<void>((resolve) => {
+      window.addEventListener('load', () => {
+        setTimeout(async () => {
+          await initAOSAfterHydration()
+          resolve()
+        }, 100) // Small delay to ensure React hydration is complete
+      })
+    })
+  } else {
+    setTimeout(async () => {
+      await initAOSAfterHydration()
+    }, 100)
+  }
+}
+
+async function initAOSAfterHydration() {
   try {
     const AOS = await loadAOS()
     AOS.init({
       duration: 500,
       easing: 'ease-in-out',
       once: true,
-      offset: 10,
+      offset: 20,
+      disable: false,
+      startEvent: 'DOMContentLoaded', // Use 'load' instead of 'DOMContentLoaded'
+      useClassNames: false,
+      disableMutationObserver: false,
     })
-    console.log('AOS initialized successfully')
+    console.log('AOS initialized successfully after hydration')
   } catch (error) {
     console.warn('AOS initialization failed:', error)
     // Continue without AOS if it fails to load

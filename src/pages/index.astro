@@ -54,7 +54,10 @@ import AlertSection from '../components/AlertSection'
     <ExclusionSection />
 
     <!-- Testimonials Section -->
-    <TestimonialsSection client:load />
+    <TestimonialsSection
+      client:load
+      client:only="react"
+    />
 
     <!-- Story Section -->
     <StorySection />
