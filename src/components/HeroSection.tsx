@@ -20,7 +20,7 @@ export default function HeroSection({ variant }: { variant: 'landing' | 'home' |
 
   return (
     <section className="max-w-6xl mx-auto px-5 sm:px-[42px] py-5 sm:py-[50px] flex flex-col sm:flex-row-reverse items-center gap-10 sm:gap-[100px]">
-      <div className="relative shrink-0 max-w-[410px]" data-aos="zoom-in">
+      <div className="relative shrink-0 max-w-[410px]" data-aos="fade-in">
         <img src={image.src} alt="Pet insurance promo feature" />
       </div>
 

@@ -44,7 +44,7 @@ export default function PromoFeatureSection() {
         <GroupActionButton className="mt-12" requestClassName="hidden sm:flex" />
       </div>
 
-      <div className="relative shrink-0 sm:max-w-[356px]" data-aos="zoom-in" data-aos-duration="700">
+      <div className="relative shrink-0 sm:max-w-[356px]" data-aos="fade-in" data-aos-duration="700">
         <img
           src={allImages.promoFeature.src}
           alt="Pet insurance promo feature"

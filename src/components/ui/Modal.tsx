@@ -19,7 +19,7 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
       {/* Modal */}
       <div
         className="relative bg-white rounded-lg shadow-xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-        data-aos="zoom-in"
+        data-aos="fade-in"
         data-aos-duration="300"
       >
         {/* Header */}
