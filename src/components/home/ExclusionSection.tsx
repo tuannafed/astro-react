@@ -28,7 +28,7 @@ export default function ExclusionSection() {
 
   return (
     <section className="max-w-desktop mx-auto py-12">
-      <div className="bg-pink-100 py-12 sm:py-16 px-6 sm:px-12 sm:rounded-3xl text-center">
+      <div className="bg-pink-100 py-12 sm:py-16 px-5 sm:px-12 sm:rounded-3xl text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
           What are Knose’s <span className="text-primary">Exclusion (or Waiting) Periods?</span>
         </h2>

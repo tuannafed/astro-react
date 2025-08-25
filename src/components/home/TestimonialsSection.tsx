@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
   )
 
   return (
-    <section className="bg-white py-12 sm:py-16 px-6">
+    <section className="bg-white py-12 sm:py-16 px-5">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold mb-4 text-center" data-aos="fade-up">
           <span className="text-primary font-bold">Trusted by</span> Australian pet owners
@@ -135,7 +135,7 @@ export default function TestimonialsSection() {
             <>
               <button
                 onClick={() => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-                className="absolute left-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
+                className="absolute left-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors hidden sm:block"
                 aria-label="Previous testimonials"
               >
                 <ChevronIcon className="w-5 h-5 rotate-90 [&>path]:fill-primary" />
@@ -143,7 +143,7 @@ export default function TestimonialsSection() {
 
               <button
                 onClick={() => setCurrentIndex((prev) => (prev + 1) % totalSlides)}
-                className="absolute right-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors"
+                className="absolute right-0 top-1/2 -translate-y-1/2 text-xl z-10 bg-white shadow-md focus:outline-none p-2 rounded-full hover:bg-gray-50 transition-colors hidden sm:block"
                 aria-label="Next testimonials"
               >
                 <ChevronIcon className="w-5 h-5 -rotate-90 [&>path]:fill-primary" />
@@ -152,7 +152,7 @@ export default function TestimonialsSection() {
           )}
 
           {/* Cards */}
-          <div className="flex items-stretch gap-4 sm:gap-6 px-4 sm:px-6 md:px-10">
+          <div className="flex items-stretch gap-4 sm:gap-6 sm:px-6 md:px-10">
             {visibleTestimonials.map((t, i) => (
               <div
                 key={t.id}

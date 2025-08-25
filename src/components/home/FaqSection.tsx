@@ -58,7 +58,7 @@ export default function FaqSection() {
 
   return (
     <section className="max-w-7xl mx-auto py-6 sm:py-12">
-      <div className="bg-blue-light sm:rounded-2xl p-6 sm:px-12 sm:py-20 mx-auto text-center">
+      <div className="bg-blue-light sm:rounded-2xl py-10 px-5 sm:px-12 sm:py-20 mx-auto text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-6" data-aos="fade-up">
             <span className="text-cyan-dark">Pet Insurance Guide</span>{' '}

@@ -30,7 +30,7 @@ export default function ResourcesSection() {
 
   return (
     <section className="max-w-7xl mx-auto pt-10 sm:my-12">
-      <div className="bg-blue-light sm:rounded-2xl px-6 py-10 sm:p-12 mx-auto flex flex-col sm:flex-row gap-6">
+      <div className="bg-blue-light sm:rounded-2xl px-5 py-10 sm:p-12 mx-auto flex flex-col sm:flex-row gap-6">
         <h2 className="text-3xl flex-1 sm:text-4xl font-bold leading-tight" data-aos="fade-up">
           Pet
           <br className="hidden sm:block" /> Insurance <span className="text-primary">Resources</span>
@@ -57,7 +57,7 @@ export default function ResourcesSection() {
           </a>
         </div>
 
-        <div className="space-y-4 flex-1 px-3 py-4" data-aos="fade-up">
+        <div className="space-y-4 flex-1 sm:px-3 sm:py-4" data-aos="fade-up">
           <ul className="space-y-2">
             {resources.map((item, i) => (
               <li key={i}>

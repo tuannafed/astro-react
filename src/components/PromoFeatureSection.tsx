@@ -5,7 +5,7 @@ import GroupActionButton from './GroupActionButton'
 export default function PromoFeatureSection() {
   return (
     <section className="max-w-6xl mx-auto px-0 sm:px-6 lg:px-[64px] py-6 sm:py-[50px] flex flex-col items-center sm:flex-row-reverse gap-10 sm:gap-[100px]">
-      <div className="flex-1 px-6 sm:px-0">
+      <div className="flex-1 px-5 sm:px-0">
         <Divider className="mb-8 sm:mb-5" />
         <h2 className="text-lg sm:text-xl font-bold mb-5" data-aos="fade-up">
           A Simple and Transparent Cover for <span className="text-primary">Your Peace of Mind</span>

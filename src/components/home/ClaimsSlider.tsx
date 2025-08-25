@@ -53,7 +53,7 @@ export default function ClaimsSlider() {
   }, [])
 
   return (
-    <section className="max-w-7xl mx-auto my-6 sm:my-12 text-center">
+    <section className="max-w-7xl mx-auto my-6 sm:my-12 px-5 text-center">
       <h2 className="text-3xl sm:text-4xl font-bold mb-2" data-aos="fade-up">
         Pet insurance claims <span className="text-primary">made easy</span>
       </h2>
@@ -67,7 +67,7 @@ export default function ClaimsSlider() {
             {claimsData.map((item, i) => (
               <div
                 key={i}
-                className="embla__slide flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] h-full px-6 sm:px-3"
+                className="embla__slide flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] h-full px-0 sm:px-3"
               >
                 <div
                   className="group rounded-lg overflow-hidden border border-primary bg-white h-full"

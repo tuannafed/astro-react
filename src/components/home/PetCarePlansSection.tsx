@@ -21,7 +21,7 @@ export default function PetCarePlansSection() {
 
   return (
     <section className="max-w-7xl mx-auto py-6 sm:py-12">
-      <div className="bg-blue-light sm:rounded-2xl p-6 sm:px-12 sm:py-20 mx-auto text-center">
+      <div className="bg-blue-light sm:rounded-2xl px-5 py-10 sm:px-12 sm:py-20 mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-2" data-aos="fade-up">
           <span className="text-pink-600">Extensive pet care coverage</span>{' '}
           <span className="text-gray-800">for your dogs and cats</span>

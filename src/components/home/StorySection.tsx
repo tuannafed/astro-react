@@ -2,7 +2,7 @@ import { allImages, iconImages, logoImages, sectionImages } from '../../constant
 
 export default function StorySection() {
   return (
-    <section className="max-w-6xl mx-auto py-12 px-4">
+    <section className="max-w-6xl mx-auto py-12 px-5">
       <div className="text-center mb-10">
         <h2 className="text-3xl sm:text-[40px] font-bold" data-aos="fade-up">
           <span className="text-pink-600">Discover</span> <span className="text-gray-800">our story</span>
@@ -12,7 +12,7 @@ export default function StorySection() {
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row-reverse gap-8 sm:gap-[64px] px-3">
+      <div className="flex flex-col lg:flex-row-reverse gap-8 sm:gap-[64px] sm:px-3">
         <div className="space-y-4 flex-1 text-left" data-aos="fade-up" data-aos-duration="700">
           <ul className="space-y-1">
             {[

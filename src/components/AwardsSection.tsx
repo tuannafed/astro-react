@@ -2,7 +2,7 @@ import { logoImages } from '../constants'
 
 export default function AwardsSection() {
   return (
-    <section className="bg-primary text-white px-6 pt-4 pb-6 sm:py-0">
+    <section className="bg-primary text-white px-5 pt-4 pb-8 sm:py-0">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-2 sm:gap-12 text-center lg:text-left">
         <div className="flex items-center justify-center gap-4 flex-wrap" data-aos="zoom-out">
           <img src={logoImages.partnerLogo.src} alt="Awards" className="w-[428px] object-contain" />

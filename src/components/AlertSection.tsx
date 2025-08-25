@@ -5,7 +5,7 @@ export default function LandingAlertBar() {
         <div data-aos="flip-down">Get 2 Months Free Pet Insurance Today!</div>
       </div>
 
-      <div className="max-w-1200 mx-auto px-3 sm:px-0 mt-4 sm:mt-6">
+      <div className="max-w-1200 mx-auto px-4 sm:px-0 mt-5 sm:mt-6">
         <div className="bg-alert-light rounded-md max-w-6xl mx-auto ">
           <div data-aos="zoom-in" data-aos-delay="100" className="text-center gap-3 px-5 py-4 sm:py-4.5 space-x-2">
             <span className="font-semibold text-secondary">Enjoy 15% OFF for Life!</span>
